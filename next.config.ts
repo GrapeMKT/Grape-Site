@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Landing pages estáticas em public/<slug>/index.html. O Next não serve
+  // index.html de pasta sozinho, então mapeamos /<slug> para o arquivo.
+  async rewrites() {
+    return ["grape-clinic", "ebook-menopausa-grape", "obg-grape-clinic"].map(
+      (slug) => ({
+        source: `/${slug}`,
+        destination: `/${slug}/index.html`,
+      }),
+    );
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
