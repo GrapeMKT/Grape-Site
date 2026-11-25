@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
   // Landing pages estáticas em public/<slug>/index.html. O Next não serve
   // index.html de pasta sozinho, então mapeamos /<slug> para o arquivo.
   async rewrites() {
-    return ["grape-clinic", "ebook-menopausa-grape", "obg-grape-clinic"].map(
+    return ["grape-clinic", "ebook-menopausa-grape", "obg-grape-clinic", "grape-clinic-reposicao"].map(
       (slug) => ({
         source: `/${slug}`,
         destination: `/${slug}/index.html`,
